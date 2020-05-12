@@ -1,0 +1,26 @@
+*{margin:0;
+  padding:0;
+  box-sizing:border-box;}
+.additionArea{
+  padding:10px;
+  background-color:#ccc;
+  margin:5px;
+  width:50%;
+  border-radius:0.8%;
+  box-shadow:5px 5px 8px #888888;
+}
+#firstNumBox{
+  margin:5px 5px 5px 23px;
+  padding:3px;
+  border-radius:2px;
+}
+#secondNumBox{
+  margin:5px;
+  padding:3px;
+  border-radius:2px;
+}
+#addButton{
+  margin:5px;
+  padding:5px 15px;
+  border-radius:4px;
+}
