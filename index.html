@@ -8,10 +8,10 @@
 	<body>
 		<div class="additionArea">
 		  <span>First number</span>
-		  <input type="text" placeholder="Enter a number" id="firstNumBox">
+		  <input type="number" placeholder="Enter a number" id="firstNumBox">
 		  <br />
 		  <span>Second number</span>
-		  <input type="text" placeholder="Enter a number" id="secondNumBox">
+		  <input type="number" placeholder="Enter a number" id="secondNumBox">
 		  <br />
 		  <div class="buttons">
 			<button class="buttonToAdd" id="addButton">Add</button>
@@ -20,6 +20,16 @@
 			<button class="buttonToAdd" id="divideButton">Divide</button>
 		  </div>
 		  <div id="resultBox"></div>
+		</div>
+		
+		<!--This is for inserting dash between even numbers -->
+		<div class="additionArea">
+			<p>Insert dash between two even numbers</p>
+			<span>Type your number</span>
+			<input type="number" id="checkForEvenInput" />
+			<button class="buttonToAdd" id="addDash">Add dash</button>
+			<br />
+			<div id="resultBox2"></div>
 		</div>
 		<script src="scripts/index.js"></script>
 	</body>
