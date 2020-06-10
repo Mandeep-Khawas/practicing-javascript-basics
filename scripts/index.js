@@ -1,3 +1,6 @@
+//This practice is being done from this website
+//https://www.w3resource.com/javascript-exercises/javascript-array-exercises.php
+
 document.querySelector('#addButton').addEventListener('click',() => {
 	let num1 = parseInt(document.querySelector('#firstNumBox').value);
 	let num2 = parseInt(document.querySelector('#secondNumBox').value);
@@ -162,4 +165,96 @@ document.querySelector('#addDash').addEventListener('click', () => {
 	document.querySelector('#resultBox2').appendChild(displayElement);
 	console.log(typeof(userInput));
 });
+
+//Sort the items of an array
+const unsortedArray1 = [3,8,7,6,5,-4,-3,2,1];
+
+const newSortedArray = unsortedArray1.sort((a,b) => {
+	return a-b;
+});
+console.log(newSortedArray);
+
+//Find the most frequent item of an array
+const arr1 = [3,'a','a','a',2,3,'a',3,'a',2,4,9,3];
+let mf = 1;
+let m = 0;
+let item;
+
+let checkForSimilarItem = (arr) => {
+	for(let i=0;i<arr.length;i++){
+		for(let j=i;j<arr.length;j++){
+			if(arr[i] === arr[j]){
+				m++
+			}else if (mf<m)
+                {
+                  mf=m; 
+                  item = arr1[i];
+                }
+		}
+		m=0;
+	}
+	console.log(`${item} ( ${mf} times ) `) ;
+};
+
+checkForSimilarItem(arr1);
+
+//Change the case of the text entered by the user
+document.querySelector("#changeCaseButton").addEventListener('click', () => {
+	const displayParagraph = document.createElement('p');
+	
+	const userInput = document.querySelector('#changeCaseInput').value;
+	const userInputArray = userInput.split('');
+	//console.log(userInputArray);
+	
+	const duplicateUserInputArray = [...userInputArray];
+	const modifiedUserInputArray = duplicateUserInputArray.map((x) => {
+		if(x === x.toLowerCase()){
+			return x.toUpperCase()
+		}else{
+			return x.toLowerCase()
+		}
+	});
+	
+	//console.log(modifiedUserInputArray);
+	const changedUserInputArray = modifiedUserInputArray.join('');
+	
+	displayParagraph.textContent = changedUserInputArray;
+	document.querySelector('#resultBox3').appendChild(displayParagraph);
+});
+
+//write a program which prints the elements of the following array
+//var a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+const a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+
+const printElements = (arra) => {
+	for(let i=0;i<arra.length;i++){
+		console.log(`"row ${i}"`);
+		for(let j=0;j<arra[i].length;j++){
+			console.log(`"${arra[i][j]}"`);
+		}
+	}
+};
+
+printElements(a);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
