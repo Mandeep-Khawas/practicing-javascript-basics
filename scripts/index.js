@@ -238,8 +238,79 @@ const printElements = (arra) => {
 printElements(a);
 
 
+//FInd the sum of squares of numeric vector
+const numericVectorArray = [2,3,5,7];
 
+const sumOfSquares = (arr) => {	
+	let newVectorArr = arr.map((x) => 
+			(x * x)
+	);
+	console.log(newVectorArr);
+	let sum = 0;
+	for(let i=0;i<newVectorArr.length;i++){
+		sum = sum + newVectorArr[i]
+	}
+	
+	console.log(sum)
+};
 
+sumOfSquares(numericVectorArray);
+
+//The solution for the above problem as given in the website
+//I think better approach
+function sum_sq(array){
+	var sum = 0, i = array.length;
+	while(i--){
+		sum += Math.pow(array[i], 2);
+	}return sum;
+}
+
+console.log(sum_sq([0,1,2,3,4]));
+
+//Program to compute the sum and product of an array of integers
+const sumOfIntegers = (arr) => {
+	let sum1 = 0;
+	
+	for(i=0;i<arr.length;i++){
+		sum1 += arr[i]
+	}
+	
+	return sum1;
+}
+
+console.log(sumOfIntegers(numericVectorArray));
+
+const productOfIntegers = (arr) => {
+	let product1 = 1;
+	
+	for(i=0;i<arr.length;i++){
+		product1 *= arr[i]
+	}
+	
+	return product1;
+}
+
+console.log(productOfIntegers(numericVectorArray));
+
+//Program to add items to the array and display it (No 13)
+const userInputCollection = [];
+
+document.querySelector('#addItemButton').addEventListener('click', () => {
+	const userValue = document.querySelector('#addItemsToArray').value;
+	userInputCollection.push(userValue);
+	document.querySelector('#addItemsToArray').value = '';
+	console.log(userInputCollection);
+})
+
+document.querySelector('#displayItemButton').addEventListener('click', () => {
+	const displayPara = document.createElement('p');
+	let arrayItems = userInputCollection.forEach((x,index) => {
+		// //console.log(`Element ${index} = ${x}`;);
+		`Element ${index} = ${x}`;
+	})
+	displayPara.textContent = arrayItems;
+	document.querySelector('#resultBox4').appendChild(displayPara);
+})
 
 
 
